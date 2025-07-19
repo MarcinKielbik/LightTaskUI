@@ -2,21 +2,18 @@
   display: flex;
 
   justify-content: space-between;
-
-  color: #00dddd;
   height: 80px;
   background-color: #004f4f;
-
+  color: #00dddd;
 
   .logo {
     font-weight: 300;
+    color: azure;
   }
 
   .search-field {
-  width: 350px;
-  height: 50px; 
-  margin: auto 0;
+    width: 350px;
+    height: 50px;
+    margin: auto 0;
+  }
 }
-}
-
-
