@@ -1,5 +1,7 @@
 <mat-toolbar class="navbar">
-  <span class="logo">📝 LightTask</span>
+    <a routerLink="/" >
+        <span class="logo">📝 LightTask</span>
+    </a>
 
   <mat-form-field appearance="outline" class="search-field">
     <mat-label>Search</mat-label>
@@ -7,7 +9,7 @@
   </mat-form-field>
 
   
-  <button mat-raised-button color="accent">
+  <button mat-raised-button color="accent" (click)="navigateToCreateNewTaskForm()"> 
     <mat-icon>add</mat-icon>
     New Task
   </button>
