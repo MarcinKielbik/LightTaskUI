@@ -14,6 +14,9 @@ import {MatInputModule} from '@angular/material/input';
 import { NewTaskComponent } from './components/new-task/new-task.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -31,7 +34,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatCardModule,
+
   ],
   providers: [
     provideClientHydration(),

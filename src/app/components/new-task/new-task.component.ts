@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NewTaskService, Task } from '../../services/new-task.service';
 import { title } from 'process';
 import { error } from 'console';
@@ -15,7 +15,7 @@ export class NewTaskComponent {
 
   constructor(private fb: FormBuilder, private newTaskService: NewTaskService) {
     this.taskForm = this.fb.group({
-      title: [''],
+      title: ['', Validators.required],
       description: [''],
       completed: [false]
     });

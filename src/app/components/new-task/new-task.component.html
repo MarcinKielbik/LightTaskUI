@@ -1,2 +1,36 @@
-<p>Create new task</p>
+<div class="container">
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-title>Create new task</mat-card-title>
 
+      <!-- <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title" required />
+      </mat-form-field> -->
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title" required />
+        <mat-error *ngIf="taskForm.get('title')?.hasError('required')">
+          Title required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+
+      <mat-checkbox formControlName="completed">Done?</mat-checkbox>
+
+      <div style="margin-top: 16px">
+     <button mat-raised-button color="primary" type="submit" [disabled]="taskForm.invalid">
+  Dodaj
+</button>
+    </div>
+
+ 
+
+    </mat-card>
+  </form>
+</div>
