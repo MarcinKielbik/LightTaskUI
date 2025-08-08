@@ -7,7 +7,10 @@ import { HomeService, Task } from '../../services/home.service';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-tasks: Task[] = [];
+
+  tasks: Task[] = [];
+
+  isLoading = true;
 
   constructor(private homeService: HomeService) {}
 
@@ -22,10 +25,12 @@ tasks: Task[] = [];
     this.homeService.getAllTasks().subscribe({
       next: (data) => {
         this.tasks = data;
+        this.isLoading = false;
         console.log('Odebrane zadania:', data);
       },
       error: (err) => {
         console.error('Błąd pobierania zadań:', err);
+        this.isLoading = false;
       }
     });
   }

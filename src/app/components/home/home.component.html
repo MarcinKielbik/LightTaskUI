@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div *ngIf="isLoading" class="loading">
+    Loading...
+</div>
+
+<div *ngIf="!isLoading && tasks.length === 0" class="no-task">
+    No tasks. Do something.
+</div>
+
+<ul *ngIf="!isLoading && tasks.length > 0" class="task-list">
+    <li *ngFor="let task of tasks" class="task-item">
+        <h3>{{ task.title }}</h3>
+        <p>{{ task.description }}</p>
+        <!-- <p>{{ task.done }}</p> -->
+
+        <p>Status: {{ task.done ? 'Done' : 'Pending'}}</p>
+    </li>
+</ul>
