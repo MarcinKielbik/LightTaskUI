@@ -17,7 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { MatCardModule } from '@angular/material/card';
     ReactiveFormsModule,
     MatCheckboxModule,
     MatCardModule,
-
+    MatListModule,
+    MatDividerModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     provideClientHydration(),
