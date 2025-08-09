@@ -12,6 +12,8 @@ export class HomeComponent {
 
   isLoading = true;
 
+  searchTerm = '';
+
   constructor(private homeService: HomeService) {}
 
   /*ngOnInit(): void {
@@ -34,4 +36,11 @@ export class HomeComponent {
       }
     });
   }
+
+  filteredTasks(): Task[] {
+  return this.tasks.filter(task =>
+    task.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+    task.description.toLowerCase().includes(this.searchTerm.toLowerCase())
+  );
+}
 }

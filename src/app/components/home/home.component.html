@@ -9,13 +9,13 @@
 
   <div *ngIf="!isLoading && tasks.length > 0">
 
-    <mat-form-field appearance="outline" class="search-field">
+<mat-form-field appearance="outline" class="search-field">
     <mat-label>Search</mat-label>
-    <input matInput type="text" placeholder="Search tasks..." />
+    <input matInput type="text" placeholder="Search tasks..." [(ngModel)]="searchTerm"/>
   </mat-form-field>
 
 
-    <div *ngFor="let task of tasks" class="task-wrapper">
+    <div *ngFor="let task of filteredTasks()" class="task-wrapper">
       <mat-card class="task-card">
         <mat-card-header>
           <mat-card-title>
